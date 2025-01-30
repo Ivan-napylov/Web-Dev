@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.container {
+    display: flex;
+    max-width: 900px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.left-section {
+    flex: 1;
+    padding-right: 50px;
+}
+.left-section h1 {
+    color: #1877f2;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+.right-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.login-box {
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+}
+.login-box input {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.login-btn {
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.forgot-password {
+    text-align: center;
+    color: #1877f2;
+    margin-top: 10px;
+    text-decoration: none;
+}
+.divider {
+    height: 1px;
+    background-color: #ddd;
+    margin: 15px 0;
+}
+.create-account {
+    background-color: #42b72a;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
