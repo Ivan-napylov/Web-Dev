@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 70px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    align-items: center;
+    padding: 10px 50px;
+    height: 50px; /* Фиксированная высота */
+    display: flex;
+}
+p {
+    color: aliceblue;
+    font-size: 25px;
+}
+
+.container {
+    max-width: 400px;
+    margin: 60px auto 20px; /* Adjusted for fixed header */
+}
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-top: 5px;
+}
+.btn-danger {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.btn-primary {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.form-control {
+    width: calc(100% - 60px);
+    padding: 5px;
+}
+.input-group {
+    display: flex;
+    justify-content: space-between;
+}
