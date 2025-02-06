@@ -1,9 +1,6 @@
-let task = [];
-
-
-
 function addTask() {
     let taskText = document.getElementById("taskInput").value;
+    
     if (taskText.trim() === "") return;
 
     let taskList = document.getElementById("taskList");
