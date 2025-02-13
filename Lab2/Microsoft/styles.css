@@ -75,3 +75,9 @@ body {
 .icons img {
     width: 40px;
 }
+
+.containerCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
