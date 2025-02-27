@@ -1,0 +1,24 @@
+<div class="filter">
+    <label for="category">Категория:</label>
+    <select id="category" [(ngModel)]="selectedCategory">
+      <option value="all">Все</option>
+      <option *ngFor="let category of getUniqueCategories()" [value]="category">
+        {{ category }}
+      </option>
+    </select>
+  </div>
+  
+<div class="product-list">
+  <app-product-item 
+  *ngFor="let product of filteredProducts" 
+  [product]="product" 
+  (productRemoved)="removeProduct($event)">
+</app-product-item>
+
+</div>
+
+  
+  
+  
+
+  

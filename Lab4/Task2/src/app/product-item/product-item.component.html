@@ -1,0 +1,19 @@
+<div class="product-card">
+    <a [href]="product.link" target="_blank">
+      <img [src]="product.img_src" alt="{{ product.name }}">
+      <div class="product-name">{{ product.name }}</div>
+      <div class="product-description">{{ product.description }}</div>
+      <div class="product-rating">⭐ {{ product.rating }}</div>
+    </a>
+  
+    <div class="actions">
+      <button class="like-btn" (click)="increaseLikes()">❤️ {{ product.likes }}</button>
+      <button class="delete-btn" (click)="removeProduct()">🗑️ Remove</button>
+
+    </div>
+  
+    <button class="share-btn" (click)="shareProduct('whatsapp', product)">WhatsApp</button>
+    <button class="share-btn telegram" (click)="shareProduct('telegram', product)">Telegram</button>
+
+  </div>
+  

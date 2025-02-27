@@ -1,1 +1,27 @@
-<h1>APP</h1>
+<!-- <div class="categories">
+    <button *ngFor="let category of categories" (click)="selectCategory(category)">
+      {{ category }}
+    </button>
+    <button (click)="selectedCategory = null">Show All</button>
+  </div>
+  
+  <div class="products-container">
+    <div class="product-card" *ngFor="let product of filteredProducts">
+      <a [href]="product.link" target="_blank">
+        <img [src]="product.img_src" alt="{{ product.name }}">
+        <div class="product-name">{{ product.name }}</div>
+        <div class="product-description">{{ product.description }}</div>
+        <div class="product-rating">⭐ {{ product.rating }}</div>
+      </a>
+  
+      <div class="actions">
+        <button class="like-btn" (click)="increaseLikes(product.id)">❤️ {{ product.likes }}</button>
+        <button class="delete-btn" (click)="removeProduct(product.id)">🗑️ Remove</button>
+      </div>
+  
+      <button class="share-btn" (click)="shareProduct(product, 'whatsapp')">WhatsApp</button>
+      <button class="share-btn telegram" (click)="shareProduct(product, 'telegram')">Telegram</button>
+    </div>
+  </div> -->
+
+<app-product-list [products]="filteredProducts"></app-product-list>
