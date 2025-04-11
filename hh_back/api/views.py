@@ -4,26 +4,33 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import Company, Vacansy
 from .serializers import CompanySerializer, VacansySerializer
 import json
+from rest_framework import generics
 
 
-@csrf_exempt
-def companies(request):
-    if request.method == 'GET':
-        company_list = Company.objects.all()
-        serializer = CompanySerializer(company_list, many = True)
-        # company_json = [c.to_json() for c in company_list]  
+# @csrf_exempt
+# def companies(request):
+#     if request.method == 'GET':
+#         company_list = Company.objects.all()
+#         serializer = CompanySerializer(company_list, many = True)
+#         # company_json = [c.to_json() for c in company_list]  
         
-        return JsonResponse(serializer.data, safe=False)
+#         return JsonResponse(serializer.data, safe=False)
         
         
         
-    elif request.method == 'POST':
-        data = json.loads(request.body)
-        serializer = CompanySerializer(data = data)
-        if serializer.is_valid():
-            serializer.save()
-            return JsonResponse(serializer.data, status = 201)
-        return JsonResponse(serializer.errors, status = 400)
+#     elif request.method == 'POST':
+#         data = json.loads(request.body)
+#         serializer = CompanySerializer(data = data)
+#         if serializer.is_valid():
+#             serializer.save()
+#             return JsonResponse(serializer.data, status = 201)
+#         return JsonResponse(serializer.errors, status = 400)
+
+
+class CompanyListCreateView(generics.ListCreateAPIView):
+    queryset = Company.objects.all()
+    serializer_class = CompanySerializer
+    
 
 @csrf_exempt
 def company_detail(request, id):

@@ -1,10 +1,36 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { AlbumsComponent } from './albums/albums.component';
 
 export const routes: Routes = [
-    {path: 'home', component: HomeComponent, title: 'Home page'},
-    {path: 'about', component: AboutComponent, title: 'About page'},
-    {path: 'albums', component: AlbumsComponent, title: 'Albums page'}
-];
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+  
+    {
+      path: 'home',
+      loadComponent: () =>
+        import('./home/home.component').then(m => m.HomeComponent),
+      title: 'Home page'
+    },
+    {
+      path: 'about',
+      loadComponent: () =>
+        import('./about/about.component').then(m => m.AboutComponent),
+      title: 'About page'
+    },
+    {
+      path: 'albums',
+      loadComponent: () =>
+        import('./albums/albums.component').then(m => m.AlbumsComponent),
+      title: 'Albums page'
+    },
+    {
+        path: 'albums/:id',
+        loadComponent: () =>
+          import('./album-detail/album-detail.component').then(m => m.AlbumDetailComponent),
+        title: 'Album Detail'
+    },      
+    {
+      path: 'albums/:id/photos',
+      loadComponent: () =>
+        import('./album-photos/album-photos.component').then(m => m.AlbumPhotosComponent),
+      title: 'Album Photos'
+    }
+  ];
